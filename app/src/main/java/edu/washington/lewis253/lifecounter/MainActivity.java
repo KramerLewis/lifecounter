@@ -10,19 +10,39 @@ import android.widget.*;
 
 public class MainActivity extends ActionBarActivity {
 
-    Button[][] buttons;
+
     int numPlayers;
+    View.OnClickListener listener;
+    Button[][] buttons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        numPlayers = 8;
-        buttons = new Button[numPlayers][4];
+        numPlayers = 2;
+        buttons = new Button[8][4];
 
+        Button add = (Button)findViewById(R.id.addPlayer);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(numPlayers < 8) {
+                    numPlayers++;
+                    String rowID = "player" + numPlayers;
+                    int rowid = getResources().getIdentifier(rowID, "id", "edu.washington.lewis253.lifecounter");
+                    TableRow row = (TableRow) findViewById(rowid);
+                    for(int j = 2; j < 6; j++) {
+                        buttons[numPlayers - 1][j - 2] = (Button) row.getChildAt(j);
+                        buttons[numPlayers - 1][j - 2].setOnClickListener(listener);
+                    }
 
-        View.OnClickListener listener = new View.OnClickListener() {
+                    row.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        listener = new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {

@@ -7,7 +7,13 @@
     android:id="@+id/main" tools:context=".MainActivity">
 
 
-       
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Player"
+        android:id="@+id/addPlayer"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 
     <TableLayout
@@ -149,7 +155,7 @@
                 android:layout_toEndOf="@+id/p2plus1" />
         </TableRow>
 
-        <TableRow android:id="@+id/player3">
+        <TableRow android:visibility="gone" android:id="@+id/player3">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -214,7 +220,7 @@
                 android:layout_toEndOf="@+id/p3plus1" />
         </TableRow>
 
-        <TableRow android:id="@+id/player4">
+        <TableRow android:visibility="gone" android:id="@+id/player4">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -280,7 +286,7 @@
                 android:layout_toEndOf="@+id/p4plus1" />
         </TableRow>
 
-        <TableRow android:id="@+id/player5">
+        <TableRow android:visibility="gone" android:id="@+id/player5">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -347,7 +353,7 @@
 
         </TableRow>
 
-        <TableRow android:id="@+id/player6">
+        <TableRow android:visibility="gone" android:id="@+id/player6">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -414,7 +420,7 @@
                 android:layout_toEndOf="@+id/p6plus1" />
         </TableRow>
 
-        <TableRow android:id="@+id/player7">
+        <TableRow android:visibility="gone" android:id="@+id/player7">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -480,7 +486,7 @@
                 android:layout_toEndOf="@+id/p7plus1" />
         </TableRow>
 
-        <TableRow android:id="@+id/player8">
+        <TableRow android:visibility="gone" android:id="@+id/player8">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -559,6 +565,8 @@
         android:id="@+id/loseLabel"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+
 
 
 </RelativeLayout>
